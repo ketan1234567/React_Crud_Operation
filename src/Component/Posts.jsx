@@ -20,24 +20,26 @@ export const Posts = () => {
 
   return (
     <section className="section-post">
-      <ol>
+      <ul className="post-list">
         {data.map((curElem) => {
           const { id, title, body } = curElem;
 
           return (
-            <li key={id}>
+            <li key={id} className="post-card">
               <p>
                 <strong>Title:</strong> {title}
               </p>
               <p>
                 <strong>Body:</strong> {body}
               </p>
-              <button>Edit</button>
-              <button className="btn-delete">Delete</button>
+              <div className="btn-group">
+                <button>Edit</button>
+                <button className="btn-delete">Delete</button>
+              </div>
             </li>
           );
         })}
-      </ol>
+      </ul>
     </section>
   );
 };
